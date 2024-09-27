@@ -44,13 +44,14 @@ class ViewController: UIViewController {
         } else {
             timer.invalidate()
             titleLabel.text = "READY!"
+            playSound()
             
-            func playSound(title: String?) {
-                let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
-                player = try! AVAudioPlayer(contentsOf: url!)
-                player.play()
-            }
         }
+    }
+    func playSound() {
+        let url = Bundle.main.url(forResource: "alarm_sound", withExtension: "mp3")
+        player = try! AVAudioPlayer(contentsOf: url!)
+        player.play()
     }
     
 }
